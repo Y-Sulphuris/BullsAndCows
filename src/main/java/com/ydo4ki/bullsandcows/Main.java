@@ -21,7 +21,12 @@ public class Main {
 				"bull means that your guess contains a correct digit in a right place, cow means that your guess contains a correct digit in a wrong place"
 		);
 		while(true) {
-			String input = scanner.nextLine();
+			String input;
+			while(true) {
+				input = scanner.nextLine();
+				if (input.length() == number.length()) break;
+				System.out.println("Your guess must be " + digits + " digits long, try again");
+			}
 			int bulls = 0, cows = 0;
 			if (input.equals(number)) {
 				System.out.println("4 bulls! You won!");
