@@ -1,6 +1,5 @@
 package com.ydo4ki.bullsandcows;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -12,15 +11,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Welcome! Enter amount of digits to guess: ");
-		int digits;
-		while(true) try {
-			String line = scanner.nextLine();
-			digits = Integer.parseInt(line);
-			break;
-		} catch (NumberFormatException e) {
-			System.out.println("Invalid input :(");
-			continue;
-		}
+		int digits = scanner.nextInt();
 		String number = generateNumber(digits);
 		if (DEBUG) System.out.println(number);
 		
