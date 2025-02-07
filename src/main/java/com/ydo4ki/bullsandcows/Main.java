@@ -41,7 +41,7 @@ public class Main {
 			}
 			int bulls = 0, cows = 0;
 			if (input.equals(number)) {
-				System.out.println("4 bulls! You won!");
+				System.out.println(digits + " bulls! You won!");
 				System.exit(0);
 			}
 			for (int i = 0, Len = input.length(); i < Len; i++) {
