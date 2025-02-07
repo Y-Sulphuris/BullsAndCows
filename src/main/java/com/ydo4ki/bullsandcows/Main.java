@@ -4,6 +4,9 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
+	
+	private static final boolean DEBUG = false;
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
@@ -22,15 +25,20 @@ public class Main {
 			continue;
 		}
 		String number = generateNumber(digits);
-		System.out.println(number);
+		if (DEBUG) System.out.println(number);
 		
 		System.out.println(
 				"Number guessed, now try to guess it.\n" +
 						"The output will indicate how far are you from the number:\n" +
 						"bull means that your guess contains a correct digit in a right place, cow means that your guess contains a correct digit in a wrong place"
 		);
-		while (true) {
-			String input = scanner.nextLine();
+		while(true) {
+			String input;
+			while(true) {
+				input = scanner.nextLine();
+				if (input.length() == number.length()) break;
+				System.out.println("Your guess must be " + digits + " digits long, try again");
+			}
 			int bulls = 0, cows = 0;
 			if (input.equals(number)) {
 				System.out.println("4 bulls! You won!");
@@ -43,7 +51,7 @@ public class Main {
 					if (number.indexOf(ch) > 0) cows++;
 				}
 			}
-			System.out.println(bulls + " bulls, " + cows + " cows");
+			System.out.println(bulls + " "+(bulls == 1 ? "bull" : "bulls")+", " + cows + " "+(cows == 1 ? "cow" : "cows"));
 		}
 	}
 	
