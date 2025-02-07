@@ -5,6 +5,9 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
+	
+	private static final boolean DEBUG = false;
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
@@ -19,7 +22,7 @@ public class Main {
 			continue;
 		}
 		String number = generateNumber(digits);
-		System.out.println(number);
+		if (DEBUG) System.out.println(number);
 		
 		System.out.println(
 				"Number guessed, now try to guess it.\n" +
@@ -40,7 +43,7 @@ public class Main {
 					if (number.indexOf(ch) > 0) cows++;
 				}
 			}
-			System.out.println(bulls + " bulls, " + cows + " cows");
+			System.out.println(bulls + " "+(bulls == 1 ? "bull" : "bulls")+", " + cows + " "+(cows == 1 ? "cow" : "cows"));
 		}
 	}
 	
