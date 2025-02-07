@@ -4,13 +4,16 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
+	
+	private static final boolean DEBUG = false;
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Welcome! Enter amount of digits to guess: ");
 		int digits = scanner.nextInt();
 		String number = generateNumber(digits);
-		System.out.println(number);
+		if (DEBUG) System.out.println(number);
 		
 		System.out.println(
 				"Number guessed, now try to guess it.\n" +
