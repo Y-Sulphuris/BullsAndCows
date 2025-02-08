@@ -1,3 +1,6 @@
+
+<img src="logo.png" alt="drawing" width="200"/>
+
 # Bulls and Cows
 
 A simple logic game where you need to guess a generated number based on previous attempts
@@ -11,3 +14,7 @@ For example, if guessed number is `6138`, the output for guess `1234` shall be `
 
 Installation guide: [install.md](install.md)<br>
 Changelog: [changelog.md](changelog.md)
+
+## Network graph:
+**There are some ugly pulls to the master branch because I mixed the target branches up, but all of them have been reverted**
+![network.png](Network.png)
